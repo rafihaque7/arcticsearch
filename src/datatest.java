@@ -13,7 +13,7 @@ public class datatest {
 
         String blank = "\t\t";
         //start this program
-/*      Scanner input = new Scanner(System.in);
+     Scanner input = new Scanner(System.in);
 
         String in = input.next();
         //System.out.println("Name, Price, Market Cap, Beta, Employees, Range 52 weeks, PE Ratio \n");
@@ -35,7 +35,7 @@ public class datatest {
 
             System.out.println();
             in = input.next();
-        }*/
+        }
 
         //Data.analyzeIndividual(input);
         //Data.keepgoing(input);
@@ -53,7 +53,7 @@ public class datatest {
             System.out.println();
         }*/
 
-       ListofStocks.techgGowth();
+/*       ListofStocks.techgGowth();
 
         for (int i = 0; i < ListofStocks.listTechgrowth.length; i++) {
             Stock s1 = new Stock(ListofStocks.listTechgrowth[i]);
@@ -64,7 +64,7 @@ public class datatest {
             System.out.println();
 
 
-        }
+        }*/
 
    /*     ListofStocks.DayLosers();
         for (int i = 0; i < ListofStocks.listDayLosers.length; i++) {
