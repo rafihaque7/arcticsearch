@@ -1,0 +1,5 @@
+out
+.*.swp
+.__*
+src/.*.swp
+src/.__*
