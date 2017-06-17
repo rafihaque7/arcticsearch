@@ -22,7 +22,7 @@ public class datatest {
 
             try{
             Stock s1 = new Stock(in);
-            s1.getHistoricaldata("Jan",6,2016);
+            //s1.getHistoricaldata("Jan",6,2016);
             System.out.print(s1.name() + blank);
             System.out.print(s1.EmployeesLatest() + blank);
             //System.out.print(s1.market_cap() + blank);
@@ -43,54 +43,6 @@ public class datatest {
                 in=input.next();
             }
         }
-
-        //Data.analyzeIndividual(input);
-        //Data.keepgoing(input);
-
-/*        List<String> a = new ArrayList<>(Arrays.asList("aapl", "amzn"));
-
-        for(int i=0; i<a.size();i++) {
-            Stock s1 = new Stock(a.get(i));
-            System.out.print(s1.name() + blank);
-            System.out.print(s1.price() + blank);
-            System.out.print(s1.beta() + blank);
-            System.out.print(s1.EmployeesLatest() + blank);
-            System.out.print(s1.range_52week() + blank);
-            System.out.print(s1.pe_ratio());
-            System.out.println();
-        }*/
-
-/*       ListofStocks.techgGowth();
-
-        for (int i = 0; i < ListofStocks.listTechgrowth.length; i++) {
-            Stock s1 = new Stock(ListofStocks.listTechgrowth[i]);
-            System.out.print(s1.tickerSymbol() + blank);
-            System.out.print(s1.name() + blank);
-            System.out.print(s1.market_cap() + blank);
-            System.out.print(s1.EmployeesLatest() + blank);
-            System.out.println();
-
-
-        }*/
-
-   /*     ListofStocks.DayLosers();
-        for (int i = 0; i < ListofStocks.listDayLosers.length; i++) {
-
-            Stock s1 = new Stock(ListofStocks.listDayLosers[i]);
-
-            System.out.print(s1.name() + blank);
-            System.out.print(s1.EmployeesLatest());
-            System.out.println();
-
-
-        }*/
-
-
-
-
-
-
-
 
     }
 }

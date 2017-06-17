@@ -131,3 +131,139 @@ public class test1 {
 
     }
 }
+
+
+/*
+//Just prints the name of the company and the current price of the stock
+public static void keepgoing(Scanner input) throws IOException {
+
+    String in = input.next();
+
+    while (!in.startsWith("stop")) {
+        Stock s1 = new Stock(in);
+        System.out.print(s1.name() + " ");
+        System.out.print(s1.price());
+        System.out.println();
+        in = input.next();
+    }
+
+}
+
+//Gives a lot of information to analyze one stock
+public static void analyzeIndividual(Scanner input) throws IOException {
+
+    String in = input.next();
+    Data s1 = new Data(in);
+    s1.symboltoUrl();
+    s1.doall();
+    for (int i = 0; i < s1.name.size(); i++) {
+        System.out.print(s1.name.get(i) + blank);
+        System.out.print(s1.content.get(i));
+        System.out.println();
+    }
+    for (int i = 0; i < s1.stats.size(); i++) {
+        System.out.print(s1.stats.get(i) + blank);
+        System.out.print(s1.contentstatsLatest.get(i) + blank);
+        System.out.print(s1.contentstatsLastyear.get(i));
+        System.out.println();
+
+
+    }
+
+
+}
+
+
+//Get historical data for certain dates with month=Jan, 02,2017
+    public void getHistoricaldata(String month, int date, int year ) throws IOException{
+
+        //String url = "https://www.google.com/finance/historical?q=NYSE%3A" + this.symbol +"&startdate=" + month + "+" + date + "%2C+"+ year + "&num=1";
+        String url = "https://www.google.com/finance/historical?q=NYSE%3A"+ this.symbol+ "&&startdate=" + month +"+"+date+"%2C+"+year+"&enddate=" +month+"+"+date+"%2C+"+year+"&num=1";
+
+
+        Scanner input = new Scanner(new URL(url).openStream());
+        ArrayList<String> codeHistWeb = new ArrayList<>();
+        ArrayList<Double> histData = new ArrayList<>();
+
+        while(input.hasNext()){
+            codeHistWeb.add(input.nextLine());
+        }
+
+        for(int i=0; i<codeHistWeb.size(); i++) {
+
+            if(codeHistWeb.get(i).contains("<td class=\"rgt\">")){
+                String[] temp = codeHistWeb.get(i).split(">");
+                histData.add(Double.parseDouble(temp[1]));
+            }
+        }
+
+        this.histOpen = histData.get(0);
+        this.histHigh = histData.get(1);
+        this.histLow = histData.get(2);
+        this.histClose = histData.get(3);
+        //this.histVolume = histData.get(4);
+
+
+
+
+
+        private ArrayList<String> name;
+        public ArrayList<String> content;
+        private ArrayList<String> stats;
+        public ArrayList<String> contentstatsLatest;
+        public ArrayList<String> contentstatsLastyear;
+
+        //Get historical data
+        public double histOpen;
+        public double histHigh;
+        public double histLow;
+        public double histClose;
+        //public double histVolume;
+
+    }
+
+
+
+    //Data.analyzeIndividual(input);
+    //Data.keepgoing(input);
+
+/*        List<String> a = new ArrayList<>(Arrays.asList("aapl", "amzn"));
+
+    for(int i=0; i<a.size();i++) {
+        Stock s1 = new Stock(a.get(i));
+        System.out.print(s1.name() + blank);
+        System.out.print(s1.price() + blank);
+        System.out.print(s1.beta() + blank);
+        System.out.print(s1.EmployeesLatest() + blank);
+        System.out.print(s1.range_52week() + blank);
+        System.out.print(s1.pe_ratio());
+        System.out.println();
+    }*/
+
+/*       ListofStocks.techgGowth();
+
+    for (int i = 0; i < ListofStocks.listTechgrowth.length; i++) {
+        Stock s1 = new Stock(ListofStocks.listTechgrowth[i]);
+        System.out.print(s1.tickerSymbol() + blank);
+        System.out.print(s1.name() + blank);
+        System.out.print(s1.market_cap() + blank);
+        System.out.print(s1.EmployeesLatest() + blank);
+        System.out.println();
+
+
+    }*/
+
+/*     ListofStocks.DayLosers();
+    for (int i = 0; i < ListofStocks.listDayLosers.length; i++) {
+
+        Stock s1 = new Stock(ListofStocks.listDayLosers[i]);
+
+        System.out.print(s1.name() + blank);
+        System.out.print(s1.EmployeesLatest());
+        System.out.println();
+
+
+    }*/
+
+
+*/
