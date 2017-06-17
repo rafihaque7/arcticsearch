@@ -264,6 +264,3 @@ public static void analyzeIndividual(Scanner input) throws IOException {
 
 
     }*/
-
-
-*/
