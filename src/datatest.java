@@ -23,7 +23,7 @@ public class datatest {
             try{
             Stock s1 = new Stock(in);
             //s1.getHistoricaldata("Jan",6,2016);
-            System.out.printf("%8s %17s",s1.name(),s1.EmployeesLatest());
+            System.out.printf("%15s %8s",s1.name(),s1.EmployeesLatest());
             //System.out.printf("%16s",s1.name());
             //System.out.print(s1.market_cap() + blank);
             //System.out.print(s1.beta() + blank);
