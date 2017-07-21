@@ -43,6 +43,7 @@ public class Data {
     public void doall() throws IOException
     {
         symboltoUrl();
+        //Starts reading the html file
         Scanner input1 = new Scanner(new URL(this.url).openStream());
 
         ArrayList<String> strarray = new ArrayList<>();
@@ -59,6 +60,7 @@ public class Data {
             strarray.add(input1.nextLine());
         }
 
+        //It looks for certain keywords and adds it to the arraylist
         for (int i = 0; i < strarray.size(); i++)
         {
             if (strarray.get(i).contains("itemprop=")) {
