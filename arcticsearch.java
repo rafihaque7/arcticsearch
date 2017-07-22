@@ -28,6 +28,9 @@ public class arcticsearch {
         System.out.println("\n\nType stop to stop the program");
     }
 
+
+
+
     public static void numEmployees(Scanner input)
     {
         System.out.println("Start typing the ticker symbols. type \"stop\" to stop the program");
@@ -38,18 +41,9 @@ public class arcticsearch {
 
             try{
             Stock s1 = new Stock(in);
-            //s1.getHistoricaldata("Jan",6,2016);
+
             System.out.printf("%15s %8s",s1.name(),s1.EmployeesLatest());
-            //System.out.printf("%16s",s1.name());
-            //System.out.print(s1.market_cap() + blank);
-            //System.out.print(s1.beta() + blank);
-            //System.out.print(s1.EmployeesLatest() + blank);
-            //System.out.print(s1.range_52week() + blank);
-            //System.out.print(s1. + blank);
-            //System.out.print(s1.NetprofitmarginLatest() + blank);
-            //System.out.print(s1.histLow + blank);
-            //s1.getHistoricaldata("Jan",6,2017);
-            //System.out.print(s1.histLow + blank);
+
 
             System.out.println();
             in = input.next();}
@@ -61,16 +55,78 @@ public class arcticsearch {
         }
     }
 
+    public static void printGathereddata(Scanner input, int[] bigVector)
+    {
+        System.out.println("Start typing the ticker symbols. type \"stop\" to stop the program");
+        String in = input.next();
+        System.out.printf("%15s","Company Name");
+        for(int i=0; i<bigVector.length; i++)
+        {
+            if(bigVector[i]==1) System.out.printf(" %30s",Data.permName[i]);
+        }
+        System.out.println();
+
+        while (!in.startsWith("stop")) {
+            try{
+            //Stock s1 = new Stock(in);
+            Data s1 = new Data(in);
+            //Adds everything to the arraylist
+            s1.doall();
+            //This is for the name of the company
+            System.out.printf("%15s",s1.content.get(11));
+            for(int i=0; i<bigVector.length; i++)
+            {
+                if(bigVector[i]==1) System.out.printf(" %30s",s1.content.get(i));
+            }
+
+
+            System.out.println();
+            in = input.next();}
+
+            catch(Exception tiggle){
+                //System.err.println(tiggle.getCause());
+                in=input.next();
+            }
+        }
+
+    }
+
     public static void main(String[] args){
 
+        //Big vector
+        int[] bigVector = new int[23];
 
+        //System.out.println("bigVector[0] is " + bigVector[0]);
         //start this program
         startInfo();
         Scanner input = new Scanner(System.in);
         int option = input.nextInt();
         switch(option)
         {
-            case 3: numEmployees(input);
+            case 1: bigVector[17]=bigVector[4]=bigVector[5]=1;printGathereddata(input,bigVector); break; // 17 is price, 4 is market cap, 5 is PE Ratio
+            case 2: bigVector[17]=1; printGathereddata(input,bigVector); break; //17 corrensponds with price
+            case 3: numEmployees(input); break;
+            case 4: bigVector[4]=1; printGathereddata(input,bigVector); break; //4 corrensponds with Market cap
+            case 9:
+            {
+                System.out.printf("\n\nList of options\n");
+                for(int i=0; i<bigVector.length; i++)
+                {
+                    System.out.printf("%3d) %12s\t",i, Data.permName[i]);
+                    if(i%4==0) System.out.println();
+                }
+
+                Scanner vectorInput = new Scanner(System.in);
+
+                System.out.println("\nType numbers from the list above, type 123 to stop");
+                while(vectorInput.hasNext())
+                {
+                    int vectorIn = vectorInput.nextInt();
+                    if(vectorIn==123) break;
+                    bigVector[vectorIn] = 1;
+                }
+                printGathereddata(input,bigVector);
+            }
         }
 
 
@@ -78,3 +134,16 @@ public class arcticsearch {
 
     }
 }
+
+//s1.getHistoricaldata("Jan",6,2016);
+
+//System.out.printf("%16s",s1.name());
+//System.out.print(s1.market_cap() + blank);
+//System.out.print(s1.beta() + blank);
+//System.out.print(s1.EmployeesLatest() + blank);
+//System.out.print(s1.range_52week() + blank);
+//System.out.print(s1. + blank);
+//System.out.print(s1.NetprofitmarginLatest() + blank);
+//System.out.print(s1.histLow + blank);
+//s1.getHistoricaldata("Jan",6,2017);
+//System.out.print(s1.histLow + blank);
