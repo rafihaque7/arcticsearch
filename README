@@ -3,15 +3,15 @@ Web Scraping application written in Java to collect financial data from Google F
 way of viewing financial data.
 
 How do I compile and run  the program?
-You can simply type "bash runarcticsearch" to compile and run the program.
+Type "bash runarcticsearch" to compile and run the program.
 
 Additionaly, if you would like to just compile and run the program individually.
-- COMPILE
-In Unix, simply type "javac *.java" to compile the program
-- RUN
-To run the program after compiling type "java arcticsearch"
+Type "javac *.java" to compile the program
+Type "java arcticsearch" to run the program after compiling 
 
-List of all the file
+EX. "bash runarcticsearch"
+
+All the file
 - Data.java         Collects the data from Google Finance and adds it to various arraylists
 - Stock.java        Converts content arraylist, so you can refer it by name of the data
 - ListofStocks.java Getting list of ticker symbols such as "top tech growth stocks" from various websites
