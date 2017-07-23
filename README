@@ -1,6 +1,5 @@
 What does the program do?
-Web Scraping application written in Java to collect financial data from Google Finance, and other related sites. Faster
-way of viewing financial data.
+Web Scraping application written in Java to collect financial data from Google Finance, and other related sites. Faster way of viewing financial data.
 
 How do I compile and run  the program?
 Type "bash runarcticsearch" to compile and run the program.
