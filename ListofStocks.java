@@ -11,7 +11,7 @@ public class ListofStocks {
     public static String[] listTechgrowth;
     public static String[] listDayLosers;
 
-
+    //Getting symbols from Yahoo finance for top growth stocks
     public static void techgGowth() throws IOException {
 
 
@@ -48,7 +48,7 @@ public class ListofStocks {
     }
 
 
-    //List of day losers
+    //List of day losers from yahoo finance list
 
     public static void DayLosers() throws IOException {
 

@@ -48,9 +48,7 @@ public class arcticsearch {
         System.out.println("\nType numbers from the list above, type 123 to stop");
     }
 
-
-
-
+    //The way this function is written is absolutely not necessary
     public static void numEmployees(Scanner input)
     {
         System.out.println("Start typing the ticker symbols. type \"stop\" to stop the program");
@@ -63,8 +61,6 @@ public class arcticsearch {
             Stock s1 = new Stock(in);
 
             System.out.printf("%15s %8s",s1.name(),s1.EmployeesLatest());
-
-
             System.out.println();
             in = input.next();}
 
@@ -75,6 +71,7 @@ public class arcticsearch {
         }
     }
 
+    //The most important method of the program
     public static void printGathereddata(Scanner input, int[] bigVector)
     {
         clearScreen();
@@ -99,10 +96,7 @@ public class arcticsearch {
             {
                 if(bigVector[i]==1) System.out.printf(" %30s",s1.content.get(i));
             }
-            // for(int i =0; i< s1.stats.size(); i++)
-            // {
-            //     System.out.println(s1.stats.get(i));
-            // }
+
             System.out.println();
             in = input.next();
             } catch(Exception tiggle){
@@ -113,9 +107,10 @@ public class arcticsearch {
         }
     }
 
-    //The program evolves depending on what google does
+    //The program evolves depending on what google finance operates
     static int bigVectorSize = 0;
-    static List<String> permName = new ArrayList<>(Arrays.asList("xyz"));
+    static List<String> permName = new ArrayList<>(Arrays.asList("xyz"));   //xyz is just for initializing
+    //Adds the Permanent name field from googl stock
     public static void sample()
     {
         try
@@ -134,7 +129,6 @@ public class arcticsearch {
         }
 
     }
-
 
 
     public static void main(String[] args){
