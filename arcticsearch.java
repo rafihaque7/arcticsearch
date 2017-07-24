@@ -39,10 +39,10 @@ public class arcticsearch {
     {
         clearScreen();
         System.out.printf("List of options\n");
-        //Big vector length is 23
-        for(int i=0; i<23; i++)
+        //Big vector length is 35
+        for(int i=0; i<permName.size(); i++)
         {
-            System.out.printf("%3d) %18s\t",i, Data.permName[i]);
+            System.out.printf("%3d) %28s\t",i, permName.get(i));
             if(i%2==0) System.out.println();
         }
         System.out.println("\nType numbers from the list above, type 123 to stop");
@@ -81,9 +81,9 @@ public class arcticsearch {
         System.out.println("Start typing the ticker symbols. type \"stop\" to stop the program");
         String in = input.next();
         System.out.printf("%15s","Company Name");
-        for(int i=0; i<bigVector.length; i++)
+        for(int i=0; i<bigVectorSize; i++)
         {
-            if(bigVector[i]==1) System.out.printf(" %30s",Data.permName[i]);
+            if(bigVector[i]==1) System.out.printf(" %30s",permName.get(i));
         }
         System.out.println();
 
@@ -99,23 +99,52 @@ public class arcticsearch {
             {
                 if(bigVector[i]==1) System.out.printf(" %30s",s1.content.get(i));
             }
-
-
+            // for(int i =0; i< s1.stats.size(); i++)
+            // {
+            //     System.out.println(s1.stats.get(i));
+            // }
             System.out.println();
-            in = input.next();}
-
-            catch(Exception tiggle){
+            in = input.next();
+            } catch(Exception tiggle){
                 //System.err.println(tiggle.getCause());
                 in=input.next();
             }
+
+        }
+    }
+
+    //The program evolves depending on what google does
+    static int bigVectorSize = 0;
+    static List<String> permName = new ArrayList<>(Arrays.asList("xyz"));
+    public static void sample()
+    {
+        try
+        {
+            Data sample1 = new Data("googl");
+            sample1.doall();
+            bigVectorSize = sample1.name.size();
+            permName.remove(0);
+            for(int i=0; i<bigVectorSize; i++)
+            {
+                permName.add(sample1.name.get(i));
+            }
+        } catch(Exception e)
+        {
+
         }
 
     }
 
+
+
     public static void main(String[] args){
 
+
+        sample();
+
+        System.out.println(bigVectorSize);
         //Big vector
-        int[] bigVector = new int[23];
+        int[] bigVector = new int[bigVectorSize];
 
         //System.out.println("bigVector[0] is " + bigVector[0]);
         //start this program
@@ -143,8 +172,6 @@ public class arcticsearch {
                 printGathereddata(input,bigVector);
             }
         }
-
-
 
 
     }

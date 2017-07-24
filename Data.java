@@ -14,14 +14,16 @@ public class Data {
     static final String blank = "\t";
 
     //Permanent name
-    public static String[] permName = {"range" ,"range_52week" ,"open" ,"vol_and_avg" ,"market_cap" ,"pe_ratio" ,"latest_dividend-dividend_yield" ,"eps" ,"shares" ,"beta" ,"inst_own" ,"name" ,"url" ,"imageUrl" ,"tickerSymbol" ,"exchange" ,"exchangeTimezone" ,"price" ,"priceChange" ,"priceChangePercent" ,"quoteTime" ,"dataSource" ,"dataSourceDisclaimerUrl" ,"priceCurrency"
-    };
+    // public static String[] permName = {"range" ,"range_52week" ,"open" ,"vol_and_avg" ,"market_cap" ,"pe_ratio" ,"latest_dividend-dividend_yield" ,"eps" ,"shares" ,"beta" ,"inst_own" ,"name" ,"url" ,"imageUrl" ,"tickerSymbol" ,"exchange" ,"exchangeTimezone" ,"price" ,"priceChange" ,"priceChangePercent" ,"quoteTime" ,"dataSource" ,"dataSourceDisclaimerUrl" ,"priceCurrency", "Net profit margin(Q)" ,"Net profit margin(Y)" ,"Operating margin(Q)" ,"Operating margin(Y)" ,"EBITD margin(Q)" ,"EBITD margin(Y)" ,"Return on average assets(Q)" ,"Return on average assets(Y)" ,"Return on average equity(Q)" ,"Return on average equity(Y)" ,"Employees(Q)"
+    // };
 
-    private ArrayList<String> name;
+    public ArrayList<String> name;
     public ArrayList<String> content;
-    private ArrayList<String> stats;
+    public ArrayList<String> stats;
     public ArrayList<String> contentstatsLatest;
     public ArrayList<String> contentstatsLastyear;
+
+
 
     Data(String symbol)
     {
@@ -86,10 +88,41 @@ public class Data {
                 contentstatsLastyear.add(temp3[1]);
             }
         }
+
+        //Adding stats  and contentstatsLatest and contentstatsLastyear to name and content arraylist
+
+        for(int i=0; i< stats.size(); i++)
+        {
+            name.add(stats.get(i)+"(Q)");
+            content.add(contentstatsLatest.get(i)); //Last quarter
+            name.add(stats.get(i)+"(Y)");
+            content.add(contentstatsLastyear.get(i));   //Last Year
+        }
+
+        // for(int i=24; i<35; i++)
+        // {
+        //     System.out.print("\"" + name.get(i) + "\" " + ",");
+        // }
+
         this.name = name;
         this.content = content;
         this.stats = stats;
         this.contentstatsLatest = contentstatsLatest;
         this.contentstatsLastyear = contentstatsLastyear;
+
     }
+
+    // public static void main(String[] args) throws IOException
+    // {
+    //     Data a1 = new Data("googl");
+    //     a1.doall();
+    //     for(int i=0 ; i< a1.name.size(); i++)
+    //     {
+    //         System.out.printf("%d) ", i);
+    //         System.out.printf("%20s", a1.name.get(i));
+    //         System.out.printf("%20s",a1.content.get(i));
+    //         System.out.println();
+    //     }
+    //
+    // }
 }
