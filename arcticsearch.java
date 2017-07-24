@@ -13,6 +13,12 @@ public class arcticsearch {
     String blank = "\t\t";
 
     //PRINT how to use the program, and general Information
+    public static void clearScreen()
+    {
+        //Clears the screen
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
     public static void startInfo()
     {
         System.out.println("This application will help you get the data you want faster!\n\n");
@@ -26,6 +32,20 @@ public class arcticsearch {
         System.out.println("8) Operating Margin last year");
         System.out.println("9) Select from the list(Display multiple data at once)");
         System.out.println("\n\nType stop to stop the program");
+    }
+
+    //The selected option list
+    public static void listofOptions()
+    {
+        clearScreen();
+        System.out.printf("List of options\n");
+        //Big vector length is 23
+        for(int i=0; i<23; i++)
+        {
+            System.out.printf("%3d) %18s\t",i, Data.permName[i]);
+            if(i%2==0) System.out.println();
+        }
+        System.out.println("\nType numbers from the list above, type 123 to stop");
     }
 
 
@@ -57,6 +77,7 @@ public class arcticsearch {
 
     public static void printGathereddata(Scanner input, int[] bigVector)
     {
+        clearScreen();
         System.out.println("Start typing the ticker symbols. type \"stop\" to stop the program");
         String in = input.next();
         System.out.printf("%15s","Company Name");
@@ -109,16 +130,10 @@ public class arcticsearch {
             case 4: bigVector[4]=1; printGathereddata(input,bigVector); break; //4 corrensponds with Market cap
             case 9:
             {
-                System.out.printf("\n\nList of options\n");
-                for(int i=0; i<bigVector.length; i++)
-                {
-                    System.out.printf("%3d) %12s\t",i, Data.permName[i]);
-                    if(i%4==0) System.out.println();
-                }
+                listofOptions();
 
                 Scanner vectorInput = new Scanner(System.in);
 
-                System.out.println("\nType numbers from the list above, type 123 to stop");
                 while(vectorInput.hasNext())
                 {
                     int vectorIn = vectorInput.nextInt();
