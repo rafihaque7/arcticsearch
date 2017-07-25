@@ -135,8 +135,6 @@ public class arcticsearch {
 
 
         sample();
-
-        System.out.println(bigVectorSize);
         //Big vector
         int[] bigVector = new int[bigVectorSize];
 
