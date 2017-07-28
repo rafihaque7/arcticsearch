@@ -71,11 +71,41 @@ public class arcticsearch {
         }
     }
 
+    //If the user types list
+    public static void precurList(Scanner input)
+    {
+        System.out.println("Select from the list of symbols");
+        System.out.println("1) Growth Technology Stocks");
+        System.out.println("2) Day Losers List ");
+        int option = input.nextInt();
+        switch(option)
+        {
+            case 1:
+            {
+
+                System.out.println("Showing result for tech growth stocks");
+                //Loading the list of stocks
+                System.out.println("CURRENTLY WORK IN PROGRESS!!!!!!!!!!!");
+                try
+                {
+                    ListofStocks.techgGowth();
+                }
+                catch (Exception e){
+                    System.out.println("invalid tech growth URL");
+                    System.out.println("CURRENTLY WORK IN PROGRESS!!!!!!!!!!!");
+                }
+
+
+
+            }
+        }
+    }
+
     //The most important method of the program
     public static void printGathereddata(Scanner input, int[] bigVector)
     {
         clearScreen();
-        System.out.println("Start typing the ticker symbols. type \"stop\" to stop the program");
+        System.out.println("Start typing the ticker symbols or type list to get a list of ticker symbols. Type \"stop\" to stop the program");
         String in = input.next();
         System.out.printf("%15s","Company Name");
         for(int i=0; i<bigVectorSize; i++)
@@ -83,6 +113,10 @@ public class arcticsearch {
             if(bigVector[i]==1) System.out.printf(" %30s",permName.get(i));
         }
         System.out.println();
+        if(in.startsWith("list"))
+        {
+            precurList(input);
+        }
 
         while (!in.startsWith("stop")) {
             try{

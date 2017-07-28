@@ -29,10 +29,8 @@ public class ListofStocks {
             strarray.add(input1.next());
         }
 
-
         for (int i = 0; i < strarray.size(); i++) {
             if (strarray.get(i).contains("pageCategory\":\"YFINANCE:")) {
-
                 line += strarray.get(i);
             }
 
@@ -41,6 +39,7 @@ public class ListofStocks {
         String[] cutStart = line.split("\"pageCategory\":\"YFINANCE:");
         String[] cutEnd = cutStart[1].split("\",\"fallbackCategory\":");
 
+        //System.out.println(line);
 
         listTechgrowth = cutEnd[0].split(",");
 
@@ -84,6 +83,11 @@ public class ListofStocks {
 
 
     }
+    //
+    // public static void main(String[] args) throws IOException
+    // {
+    //     techgGowth();
+    // }
 
 
 }
