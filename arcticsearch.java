@@ -51,6 +51,7 @@ public class arcticsearch {
     //The way this function is written is absolutely not necessary
     public static void numEmployees(Scanner input)
     {
+        clearScreen();
         System.out.println("Start typing the ticker symbols. type \"stop\" to stop the program");
         String in = input.next();
         //System.out.println("Name, Price, Market Cap, Beta, Employees, Range 52 weeks, PE Ratio \n");
