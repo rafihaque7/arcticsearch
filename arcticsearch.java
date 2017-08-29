@@ -21,6 +21,7 @@ public class arcticsearch {
     }
     public static void startInfo()
     {
+	clearScreen();
         System.out.println("This application will help you get the data you want faster!\n\n");
         System.out.println("1) General Information (Stock Price, Market Cap, P/E Ratio, Number of Employees)");
         System.out.println("2) Current Stock Price");
