@@ -195,7 +195,7 @@ public class arcticsearch {
                 {
                     int vectorIn = vectorInput.nextInt();
                     if(vectorIn==123) break;
-                    bigVector[vectorIn] = 1;
+                    if(vectorIn <=bigVector.length) bigVector[vectorIn] = 1;
                 }
                 printGathereddata(input,bigVector);
             }
