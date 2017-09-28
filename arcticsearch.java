@@ -107,7 +107,7 @@ public class arcticsearch {
     public static void printGathereddata(Scanner input, int[] bigVector)
     {
         clearScreen();
-        System.out.println("Start typing the ticker symbols or type list to get a list of ticker symbols. Type \"stop\" to stop the program");
+        System.out.println("Start typing the ticker symbols or type list to get a list of ticker symbols. Type \"stop\" to stop the program, menu to go back to the original menu");
         String in = input.next();
         System.out.printf("%15s","Company Name");
         for(int i=0; i<bigVectorSize; i++)
@@ -121,6 +121,15 @@ public class arcticsearch {
         }
 
         while (!in.startsWith("stop")) {
+	    if( in.startsWith("menu")) //If the user types mnenu, it will take it back to the original meny
+	    {
+		selectionMenu();
+		break;
+	    }
+	    if( in.startsWith("add"))
+	    {
+		subSelection(input,bigVector);
+            }
             try{
             //Stock s1 = new Stock(in);
             Data s1 = new Data(in);
@@ -165,13 +174,27 @@ public class arcticsearch {
         }
 
     }
+   
+    public static void subSelection(Scanner input, int[] bigVector)
+    {
+         listofOptions();
 
+                Scanner vectorInput = new Scanner(System.in);
 
-    public static void main(String[] args){
+                while(vectorInput.hasNext())
+                {
+                    int vectorIn = vectorInput.nextInt();
+                    if(vectorIn==123) break;
+                    if(vectorIn <=bigVector.length) bigVector[vectorIn] = 1;
+                }
+                printGathereddata(input,bigVector);
+                
+    }
 
-
-        sample();
-        //Big vector
+    public static void selectionMenu()
+    {
+	
+       //Big vector
         int[] bigVector = new int[bigVectorSize];
 
         //System.out.println("bigVector[0] is " + bigVector[0]);
@@ -187,20 +210,18 @@ public class arcticsearch {
             case 4: bigVector[4]=1; printGathereddata(input,bigVector); break; //4 corrensponds with Market cap
             case 9:
             {
-                listofOptions();
-
-                Scanner vectorInput = new Scanner(System.in);
-
-                while(vectorInput.hasNext())
-                {
-                    int vectorIn = vectorInput.nextInt();
-                    if(vectorIn==123) break;
-                    if(vectorIn <=bigVector.length) bigVector[vectorIn] = 1;
-                }
-                printGathereddata(input,bigVector);
+        	subSelection(input,bigVector);
             }
         }
 
+
+    }	
+
+
+
+    public static void main(String[] args){
+	sample(); 
+	selectionMenu();
 
     }
 }
