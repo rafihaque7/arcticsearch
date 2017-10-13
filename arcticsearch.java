@@ -21,7 +21,7 @@ public class arcticsearch {
     }
     public static void startInfo()
     {
-	clearScreen();
+	    clearScreen();
         System.out.println("This application will help you get the data you want faster!\n\n");
         System.out.println("1) General Information (Stock Price, Market Cap, P/E Ratio, Number of Employees)");
         System.out.println("2) Current Stock Price");
@@ -32,6 +32,7 @@ public class arcticsearch {
         System.out.println("7) Operating Margin last quarter");
         System.out.println("8) Operating Margin last year");
         System.out.println("9) Select from the list(Display multiple data at once) *******");
+        System.out.println("10) Save the data to a file");
         System.out.println("\n\nType stop to stop the program");
     }
 
