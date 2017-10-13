@@ -31,7 +31,7 @@ public class arcticsearch {
         System.out.println("6) Net Profit Margin last year");
         System.out.println("7) Operating Margin last quarter");
         System.out.println("8) Operating Margin last year");
-        System.out.println("9) Select from the list(Display multiple data at once)");
+        System.out.println("9) Select from the list(Display multiple data at once) *******");
         System.out.println("\n\nType stop to stop the program");
     }
 
@@ -107,7 +107,7 @@ public class arcticsearch {
     public static void printGathereddata(Scanner input, int[] bigVector)
     {
         clearScreen();
-        System.out.println("Start typing the ticker symbols or type list to get a list of ticker symbols. Type \"stop\" to stop the program, menu to go back to the original menu");
+        System.out.println("Start typing the ticker symbols or type list to get a list of ticker symbols. Type \"stop\" to stop the program, \"menu\" to go back to the original menu");
         String in = input.next();
         System.out.printf("%15s","Company Name");
         for(int i=0; i<bigVectorSize; i++)
