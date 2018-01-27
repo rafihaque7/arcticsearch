@@ -16,7 +16,7 @@ Video Demo: http://youtu.be/PmmKQrgC4Hg
 
 >Type "java arcticsearch" to run the program after compiling 
 
-EX. "bash runarcticsearch"
+###### EX. "bash runarcticsearch"
 
 List of files | Description
 ------------- | -----------
