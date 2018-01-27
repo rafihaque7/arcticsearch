@@ -27,3 +27,6 @@ GUI1.java |        Currently work in progress for GUI version of this program
 arcticsearch.java | The main function is located here, this is for terminal interface
 runarcticsearch |   Bash file that will compile and run the program
 test1.java |        Has a lot of old code, used for testing purposes
+
+
+![main](https://github.com/rafihaque7/arcticsearch/blob/master/MainScreenshot.PNG)
