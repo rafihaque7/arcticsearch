@@ -19,11 +19,11 @@ Video Demo: http://youtu.be/PmmKQrgC4Hg
 EX. "bash runarcticsearch"
 
 List of files | Description
-------------------------------
-- Data.java |         Collects the data from Google Finance and adds it to various arraylists
-- Stock.java |        Converts content arraylist, so you can refer it by name of the data
-- ListofStocks.java Getting list of ticker symbols such as "top tech growth stocks" from various websites
-- GUI1.java         Currently work in progress for GUI version of this program
-- arcticsearch.java The main function is located here, this is for terminal interface
-- runarcticsearch   Bash file that will compile and run the program
-- test1.java        Has a lot of old code, used for testing purposes
+------------- | -----------
+Data.java |         Collects the data from Google Finance and adds it to various arraylists
+Stock.java |        Converts content arraylist, so you can refer it by name of the data
+ListofStocks.java | Getting list of ticker symbols such as "top tech growth stocks" from various websites
+GUI1.java |        Currently work in progress for GUI version of this program
+arcticsearch.java | The main function is located here, this is for terminal interface
+runarcticsearch |   Bash file that will compile and run the program
+test1.java |        Has a lot of old code, used for testing purposes
