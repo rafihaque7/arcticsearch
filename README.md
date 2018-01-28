@@ -8,7 +8,7 @@ Video Demo: http://youtu.be/PmmKQrgC4Hg
 
 **How do I compile and run  the program?**
 
-> Type "bash runarcticsearch" to compile and run the program.
+> Type `bash runarcticsearch` to compile and run the program.
 
 **Additionaly, if you would like to just compile and run the program individually.**
 
