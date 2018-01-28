@@ -12,9 +12,9 @@ Video Demo: http://youtu.be/PmmKQrgC4Hg
 
 **Additionaly, if you would like to just compile and run the program individually.**
 
-Type 'javac *.java' to compile the program
 
-Type 'java arcticsearch' to run the program after compiling 
+Type `javac *.java` to compile the program
+Type `java arcticsearch` to run the program after compiling 
 
 ###### EX. "bash runarcticsearch"
 
